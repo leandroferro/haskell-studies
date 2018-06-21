@@ -7,7 +7,4 @@ import System.Environment
 cat file = readFile file >>= putStr 
 
 main :: IO ()
-main = getArgs >>= cat . head
---  args <- getArgs
---  content <- readFile (head args)
---  putStr content
+main = getArgs >>= mapM_ cat
